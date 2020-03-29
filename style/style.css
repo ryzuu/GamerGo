@@ -10,3 +10,57 @@ html, body{
     flex-direction: column;
     justify-content: space-between;
 }
+
+header{
+    background-color: blueviolet;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.el_menu{ 
+    font-size: 20px;
+    margin: 10px 15px 10px 15px;
+    background-color: darkcyan;
+}
+
+header>a{
+    background-color: cadetblue;
+    flex-basis: 250px;
+    text-align: center;
+}
+
+#logo{
+    width: 150px;
+    height: 50%;
+}
+
+#logoa{
+    text-align: start;
+    display: flex;
+    background-color: azure;
+    flex-basis: 250px;
+    text-align: center;
+}
+
+@media(max-width: 1000px){
+    #logoa{
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    #logo{
+        height: 100%;
+        width: 100px;
+    }
+
+}
+
+#logodiv{
+    background-color: aqua;
+    flex-grow: 1;
+}
+
+footer{
+    background-color: coral;
+}
