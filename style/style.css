@@ -12,7 +12,7 @@ html, body{
 }
 
 header{
-    background-color: blueviolet;
+    background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -21,13 +21,25 @@ header{
 .el_menu{ 
     font-size: 20px;
     margin: 10px 15px 10px 15px;
-    background-color: darkcyan;
 }
 
 header>a{
-    background-color: cadetblue;
+    background-color: rgb(255, 153, 0);
     flex-basis: 250px;
     text-align: center;
+    max-height: 50px;
+    margin: 5px 10px 5px 10px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 7px rgb(0, 0, 0);
+}
+
+header>a:hover{
+    background-color: rgb(255, 255, 255);
+    transition: 0.9s;
+    box-shadow: 1px 1px 7px rgb(255, 153, 0);
+    color: rgb(0, 0, 0);
 }
 
 #logo{
@@ -41,6 +53,8 @@ header>a{
     background-color: azure;
     flex-basis: 250px;
     text-align: center;
+    max-height: 50px;
+    margin: 5px 10px 5px 10px;
 }
 
 @media(max-width: 1000px){
