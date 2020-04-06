@@ -8,6 +8,7 @@ html, body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-family: 'Exo 2', sans-serif;
 }
 header{
     background-color: rgba(255, 255, 255, 0.5);
@@ -98,4 +99,58 @@ footer{
 .ssilka{
   color: lightgreen; 
   text-decoration-line: initial; 
+}
+
+.row_container>a{
+    color: black;
+    display: flex;
+    background-color: aqua;
+    border-radius: 30px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 23%;
+}
+
+.row_container{
+    margin: auto;
+    max-width: 1200px;
+    background-color: burlywood;
+    height: 450px;
+    display: flex;
+    justify-content: space-around;
+    padding: 32px 10px;
+}
+
+.main_container{
+    max-width: 1200px;
+    padding: 10px;
+    background-color: darkmagenta;
+    margin: auto;
+    float: inline-start;
+}
+
+.news_holder{
+    max-width: 1000px;
+    background-color: chartreuse;
+    padding: 32px 10px 0px 0px;
+}
+
+hr{
+    max-width: 1008px;
+}
+
+.content>img{
+    display: flex;
+    width: 250px;
+    height: 200px;
+    background-color: aqua;
+}
+
+.content_container{
+    max-width: 1000px;
+}
+
+.info{
+    width: 70%;
+    background-color: bisque;
 }
