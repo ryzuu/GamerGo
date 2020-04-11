@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="Информационный сайт по игровой тематике" />
+    <meta name="keywords" content="games, cybersport, Игры, Киберспорт, ПК, Консоли, PC, consoles" />
+    <meta name="author" content="reizuu + team" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamerGO</title>
+    <style>
+        .slider {
+          position: relative;
+          overflow: hidden;
+        }
+    
+        .slider__wrapper {
+          display: flex;
+          transition: transform 0.6s ease;
+        }
+    
+        .slider__item {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+    
+        .slider__control {
+          position: absolute;
+          top: 50%;
+          display: none;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          color: #fff;
+          text-align: center;
+          opacity: 0.5;
+          height: 50px;
+          transform: translateY(-50%);
+          background: rgba(0, 0, 0, .5);
+        }
+    
+        .slider__control_show {
+          display: flex;
+        }
+    
+        .slider__control:hover,
+        .slider__control:focus {
+          color: #fff;
+          text-decoration: none;
+          outline: 0;
+          opacity: .9;
+        }
+    
+        .slider__control_left {
+          left: 0;
+        }
+    
+        .slider__control_right {
+          right: 0;
+        }
+    
+        .slider__control::before {
+          content: '';
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background: transparent no-repeat center center;
+          background-size: 100% 100%;
+        }
+    
+        .slider__control_left::before {
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+        }
+    
+        .slider__control_right::before {
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+        }
+    
+        .slider__item>div {
+          line-height: 250px;
+          font-size: 100px;
+          text-align: center;
+        }
+      </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Passion+One|Russo+One&display=swap');
+    </style>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" id="menu">
+            <div id="logodiv"><img id="logo" src="./images/GamerGo.png" alt=""></div>
+        </a>
+        <a href="#">
+            <div class="el_menu" id="txt">Информация</div>
+        </a>
+        <div id="Menus" class="down">
+          <div class="el_menu" id="txt">Игры</div>
+          <ul class="downmenu">
+            <li><a href="#">Flappy Bird</a></li>
+            <li><a href="#">Pukman</a></li>
+        </ul>
+        </div>
+       
+    </header>
+    <main>
+        <h6 id="txt"> &shy </h6> <!-- Пропуск строки -->
+        <h4 id="txt">Платформы</h4>
+        <h6 id="txt"> &shy </h6> <!-- Пропуск строки -->
+        <h6 id="txt"> &shy </h6> <!-- Пропуск строки -->
+        <h5 id="txt4">ПК(Персональный компьютер)</h5>
+        <h6 id="txt"> &shy </h6> <!-- Пропуск строки -->
+        <div class="container">
+            <img class="icon" src="./images/pc3.png" alt="PC">
+            <div>
+                <h6 id="txt4"> Копьютер представляет из себя персональную машину, способную выполнять множесво задач
+                    одновременно.
+                    Что очень важно для нас - это его высокая производительность,низкая стоимость игр(по сравнению с
+                    консолями)
+                    и эксклюзивные игры.
+                    Из минусов - высокая стоимость(По сравнению с консолями) </h6>
+            </div>
+        </div>
+        <h6 id="txt"> &shy </h6> <!-- Пропуск строки -->
+        <h6 id="txt"> &shy </h6> <!-- Пропуск строки -->
+        <h5 id="txt4">PS(Play Station от Sony) и Xbox(от Microsoft)</h5>
+        <h6 id="txt"> &shy </h6> <!-- Пропуск строки -->
+        <div class="slider">
+            <div class="slider__wrapper">
+              <div class="slider__item">
+                <img class="icon" class="d-block w-100" src="./images/PS4.png" alt="Первый слайд">
+              </div>
+              <div class="slider__item">
+                <img class="icon" class="d-block w-100" src="./images/XboxOne1.png" alt="Второй слайд">
+              </div>
+            </div>
+            <a class="slider__control slider__control_left" href="#" role="button"></a>
+            <a class="slider__control slider__control_right slider__control_show" href="#" role="button"></a>
+          </div>
+        <h6 id="txt"> &shy </h6> <!-- Пропуск строки -->
+        <div class="container">
+                <h6 id="txt4">
+                    Консоли дешевле чем PC, обладают своими эксклюзивами, НО не имеют возможности улучшения в будующем,
+                    менее функциональны, игры стоят дороже а графика хуже.(В большинстве случаев.) Также недавно
+                    анонсировали новые консоли PS5.
+
+                </h6>
+            </div>>
+        </div>
+        <h6 id="txt"> &shy </h6> <!-- Пропуск строки -->
+        <h6 id="txt"> &shy </h6> <!-- Пропуск строки -->
+        <h5 id="txt4">Switch(Nintendo)</h5>
+        <div class="container">
+            <div class="col-6"><img src="./images/b4b924c55637767f4ebcf2fc0cb9e486.png" alt="Switch" class="icon"> </div>
+        </div>
+        <h6 id="txt4">
+            Портативная консоль со стоимостью аналогичной обычным консолям но меньше по размерам(Можно носить в кармане), менее
+            производительней, игры ещё дороже чем на обычных консолях.
+        </h6>
+        <h6 id="txt"> &shy </h6> <!-- Пропуск строки -->
+        <h6 id="txt"> &shy </h6> <!-- Пропуск строки -->
+        <h5 id="txt4">Сматрфоны(Мобильный Гейминг)</h5>
+        <div class="container">
+            <div class="col-6"><img src="./images/ROG-Phone-II_ZS660KL_Matte-Black_Group-Photo_02.png" alt="Switch" class="icon"> </div>
+        </div>
+        <h6 id="txt4">
+          Телефон многофункционален, стоит нормально, большинство игр - бесплатны. Менее производилен чем консоли или ПК.
+        </h6>
+    </main>
+
+    <footer>
+        <h5 id="txt2"> <a href="#" class="reference">Контакты</a> </h5>
+
+        <h5 id="txt3"> <a href="#" class="reference">Дальше</a> </h5>
+    </footer>
+    <script>
+        'use strict';
+        var multiItemSlider = (function () {
+          return function (selector, config) {
+            var
+              _mainElement = document.querySelector(selector), // основный элемент блока
+              _sliderWrapper = _mainElement.querySelector('.slider__wrapper'), // обертка для .slider-item
+              _sliderItems = _mainElement.querySelectorAll('.slider__item'), // элементы (.slider-item)
+              _sliderControls = _mainElement.querySelectorAll('.slider__control'), // элементы управления
+              _sliderControlLeft = _mainElement.querySelector('.slider__control_left'), // кнопка "LEFT"
+              _sliderControlRight = _mainElement.querySelector('.slider__control_right'), // кнопка "RIGHT"
+              _wrapperWidth = parseFloat(getComputedStyle(_sliderWrapper).width), // ширина обёртки
+              _itemWidth = parseFloat(getComputedStyle(_sliderItems[0]).width), // ширина одного элемента    
+              _positionLeftItem = 0, // позиция левого активного элемента
+              _transform = 0, // значение транфсофрмации .slider_wrapper
+              _step = _itemWidth / _wrapperWidth * 100, // величина шага (для трансформации)
+              _items = []; // массив элементов
+            // наполнение массива _items
+            _sliderItems.forEach(function (item, index) {
+              _items.push({ item: item, position: index, transform: 0 });
+            });
+    
+            var position = {
+              getMin: 0,
+              getMax: _items.length - 1,
+            }
+    
+            var _transformItem = function (direction) {
+              if (direction === 'right') {
+                if ((_positionLeftItem + _wrapperWidth / _itemWidth - 1) >= position.getMax) {
+                  return;
+                }
+                if (!_sliderControlLeft.classList.contains('slider__control_show')) {
+                  _sliderControlLeft.classList.add('slider__control_show');
+                }
+                if (_sliderControlRight.classList.contains('slider__control_show') && (_positionLeftItem + _wrapperWidth / _itemWidth) >= position.getMax) {
+                  _sliderControlRight.classList.remove('slider__control_show');
+                }
+                _positionLeftItem++;
+                _transform -= _step;
+              }
+              if (direction === 'left') {
+                if (_positionLeftItem <= position.getMin) {
+                  return;
+                }
+                if (!_sliderControlRight.classList.contains('slider__control_show')) {
+                  _sliderControlRight.classList.add('slider__control_show');
+                }
+                if (_sliderControlLeft.classList.contains('slider__control_show') && _positionLeftItem - 1 <= position.getMin) {
+                  _sliderControlLeft.classList.remove('slider__control_show');
+                }
+                _positionLeftItem--;
+                _transform += _step;
+              }
+              _sliderWrapper.style.transform = 'translateX(' + _transform + '%)';
+            }
+    
+            // обработчик события click для кнопок "назад" и "вперед"
+            var _controlClick = function (e) {
+              if (e.target.classList.contains('slider__control')) {
+                e.preventDefault();
+                var direction = e.target.classList.contains('slider__control_right') ? 'right' : 'left';
+                _transformItem(direction);
+              }
+            };
+    
+            var _setUpListeners = function () {
+              // добавление к кнопкам "назад" и "вперед" обрботчика _controlClick для событя click
+              _sliderControls.forEach(function (item) {
+                item.addEventListener('click', _controlClick);
+              });
+            }
+    
+            // инициализация
+            _setUpListeners();
+    
+            return {
+              right: function () { // метод right
+                _transformItem('right');
+              },
+              left: function () { // метод left
+                _transformItem('left');
+              }
+            }
+    
+          }
+        }());
+    
+        var slider = multiItemSlider('.slider')
+    
+      </script>
+</body>
+ 
+</html>
