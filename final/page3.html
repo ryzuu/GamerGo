@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racing</title>
+</head>
+
+<body>
+
+    <canvas width="288" height="512" id="canvas"></canvas>
+
+    <script>
+
+        ctx = canvas.getContext('2d');
+
+        let bird = new Image();
+        bird.src = './images/flappy_bird_bird.png';
+
+        let bg = new Image();
+        bg.src = './images/flappy_bird_bg.png';
+
+        let fg = new Image();
+        fg.src = './images/flappy_bird_fg.png';
+
+        let pipeUp = new Image();
+        pipeUp.src = './images/flappy_bird_pipeUp.png';
+
+        let pipeBottom = new Image();
+        pipeBottom.src = './images/flappy_bird_pipeBottom.png';
+
+        let x = 10;
+        let y = 150;
+
+        let w = canvas.width;
+        let h = canvas.height;
+
+        let score = 0;
+
+        class Pipe {
+            x;
+            y;
+            constructor() {
+                this.x = w;
+                this.y = Math.floor(Math.random() * (0 - -200 + 1)) + -200;
+            }
+        }
+
+        pipe = [];
+        pipe[0] = new Pipe();
+        pipe[1] = new Pipe();
+        pipe[1].x -= 150;
+
+        var pole_x = w;
+        var pole_y = h;
+
+        let pause = false;
+
+        let time = 0;
+
+        function draw() {
+
+            ctx.drawImage(bg, pole_x - w, 0);
+            ctx.drawImage(bg, pole_x, 0);
+            pole_x -= 1;
+            if (pole_x == 0) pole_x = w;
+            for (i = 0; i < pipe.length; i++) {
+                time++;
+                ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
+                ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + pipeUp.height + 90);
+                pipe[i].x -= 1;
+                if(time >= 1800) {
+                    pipe[i].x = pipe[i].x - 2;
+                }
+                if (pipe[i].x == 0 - pipeUp.width) {
+                    pipe[i].x = w;
+                    pipe[i].y = Math.floor(Math.random() * (0 - -200 + 1)) + -200;
+                }
+            }
+            ctx.drawImage(fg, 0, 400);
+            ctx.drawImage(bird, x, y);
+            ctx.fillStyle = "white";
+            ctx.font = "20px Arial";
+            ctx.fillText(score, 10, 30);
+
+            if (y + bird.height >= 400 || y - bird.height <= 0) {
+                ctx.fillStyle = "red";
+                ctx.font = "50px Arial";
+                ctx.fillText("YOU DIED", 15, 200);
+                pause = true;
+            }
+
+            for (i = 0; i < pipe.length; i++) {
+                if (x + bird.width >= pipe[i].x && x <= pipe[i].x + 52) {
+                    if (y + bird.height >= pipe[i].y + 252 && y + bird.height <= pipe[i].y + 342) {
+                        score++;
+                    } else {
+                        ctx.fillStyle = "red";
+                        ctx.font = "50px Arial";
+                        ctx.fillText("YOU DIED", 15, 200);
+                        pause = true;
+                    }
+
+                }
+            }
+
+            y = y + 1.5
+
+
+
+
+            if (pause != true)
+                requestAnimationFrame(draw);
+        }
+
+        bg.onload = draw;
+
+        canvas.addEventListener('click', function (e) {
+            y = y - 40;
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>
