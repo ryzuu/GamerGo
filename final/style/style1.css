@@ -120,7 +120,8 @@ header>a:hover, #Menus{
     flex-direction: row;
     flex-wrap: wrap;
     flex-basis: 100px;
-    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 25px;
     text-align: justify;
     color: rgb(206, 206, 206);
@@ -220,19 +221,9 @@ hr{
     margin-bottom: 20px;
 }
 
-#action{
-    background-color: aliceblue;
-}
-
-#puzzle>img{
-        height: 40%;
-}
 
 @media screen and (max-width: 700px){
     .genres>img{
-        max-width: 100%;
-        margin: auto;
-        max-height: 60%;
         display: none;
     }
     .genres>p{
@@ -240,6 +231,61 @@ hr{
         margin: auto;
     }
     .genres{
-        background-image: url("images/genre1.jpg");
+        color: rgb(236, 236, 236);
+        margin-top: 0.1em;
+    }
+    
+    #action{
+        background-image: url("https://cdn.shazoo.ru/148382_HahfEO3nMT_darksoulsiii_2016_03_26_03_50_31.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgba(0,0,0,.45);
+        background-blend-mode: darken
+    }
+
+    #simulation{
+        background-image: url("https://cdn.shazoo.ru/385359_pwrQb08kSE_xoa3nhz.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgba(0,0,0,.5);
+        background-blend-mode: darken
+    }
+
+    #quest{
+        background-image: url("https://cutewallpaper.org/21/video-game-4k-wallpaper/The-Legend-of-Zelda-Breath-of-the-Wild-Adventure-Video-Game-.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgba(0,0,0,.7);
+        background-blend-mode: darken
+    }
+
+    #strategy{
+        background-image: url("https://wallpapershome.ru/images/wallpapers/varhamer-40000-3840x2160-vaha-strategiya-skrinshot-art-obzor-3721.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgba(0,0,0,.5);
+        background-blend-mode: darken
+    }
+
+    #puzzle{
+        background-image: url("https://main-cdn.goods.ru/big2/hlr-system/1718472/100023216281b1.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgba(0,0,0,.7);
+        background-blend-mode: darken;
+    }
+
+    #rpg{
+        background-image: url("https://wallpaperaccess.com/full/636565.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgba(0,0,0,.7);
+        background-blend-mode: darken
     }
 }
