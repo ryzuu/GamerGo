@@ -7,7 +7,6 @@ html, body{
     width: 100%;
     height: 100%;
     font-family: 'Exo 2', sans-serif;
-    background: rgb(174,174,176);
     background: radial-gradient(circle, rgba(174,174,176,1) 0%, rgba(225,225,237,1) 35%, rgba(89,104,107,1) 100%);
 }
 
@@ -102,6 +101,9 @@ header>a:hover, #Menus{
 
 #main_container{
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
 }
 
 #main_container>div>h3{
@@ -119,34 +121,44 @@ header>a:hover, #Menus{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    flex-basis: 100px;
-    margin-top: 10px;
+    margin-top: 50px;
     margin-bottom: 10px;
     font-size: 25px;
     text-align: justify;
     color: rgb(206, 206, 206);
+    justify-content: space-evenly;
 }
 
-.genres>img{
-    padding: 20px;
+.img_div{
+    background-color: antiquewhite;
+}
+
+.p_holder{
+    background-color: aquamarine;
+    max-width: 30%;
+}
+
+.img_div>img{
     border-radius: 35px;
-    max-width: 50%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
-.genres>p{
+.p_holder>p{
     padding: 20px;
-    max-width: 40%;
 }
 
 @media screen and (max-width: 900px){
-    .genres>img{
-        max-width: 60%;
-        margin: auto;
-        max-height: 60%;
+    .img_div{
+        max-width: 90%;
+        max-height: 100%;
     }
-    .genres>p{
-        max-width: 75%;
+    .p_holder{
+        max-width: 90%;
+        margin: auto;
+    }
+
+    .img_div{
         margin: auto;
     }
 }
@@ -223,16 +235,19 @@ hr{
 
 
 @media screen and (max-width: 700px){
-    .genres>img{
+    .img_div{
         display: none;
+        
     }
-    .genres>p{
-        max-width: 90%;
+    .p_holder{
+        max-width: 100%;
         margin: auto;
     }
     .genres{
         color: rgb(236, 236, 236);
         margin-top: 0.1em;
+        display: flex;
+        flex-basis: 40%;
     }
     
     #action{
@@ -289,3 +304,5 @@ hr{
         background-blend-mode: darken
     }
 }
+
+
