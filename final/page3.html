@@ -5,11 +5,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Racing</title>
+    <link rel="stylesheet" href="./style/style2.css">
 </head>
 
 <body>
 
-    <canvas width="288" height="512" id="canvas"></canvas>
+    <header>
+        <a href="index.html" id="menu">
+            <div id="logodiv"><img id="logo" src="./images/GamerGO.png" alt=""></div>
+        </a>
+        <a href="page1.html">
+            <div class="el_menu" id="txt">Информация</div>
+        </a>
+        <a href="page2.html">
+            <div class="el_menu" id="txt">Платформы</div>
+        </a>
+        <div id="Menus" class="down">
+          <div class="el_menu" id="txt">Игры</div>
+          <ul class="downmenu">
+            <li><a href="page3.html">Flappy Bird</a></li>
+            <li><a href="page4.html">Pukman</a></li>
+        </ul>
+        </div>
+    </header>
+    
+    <main>
+
+        <div id="canvas_holder">
+        <canvas width="288" height="512" id="canvas"></canvas>
+        </div> 
+        <div id="list_holder">
+            <h2>High Scores</h2>
+            <div>
+                <ul>
+                    <li>AAA</li>
+                    <li>BBB</li>
+                    <li>CCC</li>
+                    <li>DDD</li>
+                    <li>EEE</li>
+                    <li>FFF</li>
+                    <li>GGG</li>
+                    <li>HHH</li>
+                    <li>III</li>
+                    <li>JJJ</li>
+                </ul>
+            </div>
+        </div>  
+
+    </main>
+
+    <footer>
+        <h5 id="txt3">
+            <a href="#" class="reference">Контакты</a>
+        </h5>
+
+        <h5 id="txt2">
+            <a href="page2.html" class="reference">Дальше</a>
+        </h5>
+    </footer>
 
     <script>
 
