@@ -20,13 +20,9 @@
         <a href="page2.html">
             <div class="el_menu" id="txt">Платформы</div>
         </a>
-        <div id="Menus" class="down">
-            <div class="el_menu" id="txt">Игры</div>
-            <ul class="downmenu">
-                <li><a href="page3.html">Flappy Bird</a></li>
-                <li><a href="page4.html">Pukman</a></li>
-            </ul>
-        </div>
+        <a href="page3.html">
+            <div class="el_menu" id="txt">Начать с начала.</div>
+        </a>
     </header>
 
     <script src="anime.js"></script>
@@ -38,12 +34,12 @@
             easing: 'easeInOutExpo'
         })
     </script>
-    
+
     <main>
 
         <div id="canvas_holder">
-        <canvas width="288" height="512" id="canvas"></canvas>
-        </div> 
+            <canvas width="288" height="512" id="canvas"></canvas>
+        </div>
         <div id="list_holder">
             <h2>High Scores</h2>
             <div>
@@ -60,7 +56,7 @@
                     <li>JJJ</li>
                 </ul>
             </div>
-        </div>  
+        </div>
 
     </main>
 
@@ -100,7 +96,7 @@
         let h = canvas.height;
 
         let score = 0;
-        
+
         let pause = false;
 
         let time = 0;
@@ -122,7 +118,7 @@
         var pole_x = w;
         var pole_y = h;
 
-        
+
 
         function draw() {
 
@@ -135,7 +131,7 @@
                 ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
                 ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + pipeUp.height + 90);
                 pipe[i].x -= 1;
-                if(time >= 1800) {
+                if (time >= 1800) {
                     pipe[i].x = pipe[i].x - 2;
                 }
                 if (pipe[i].x <= 0 - pipeUp.width) {
