@@ -2,22 +2,31 @@
     padding: 0;
     margin: 0;
 }
-
 html, body{
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     font-family: 'Exo 2', sans-serif;
-    background: radial-gradient(circle, rgb(143, 143, 143) 0%, rgb(153, 153, 153) 35%, rgb(117, 117, 117) 100%);
+    background: rgb(174,174,176);
+    background: radial-gradient(circle, rgba(174,174,176,1) 0%, rgba(225,225,237,1) 35%, rgba(89,104,107,1) 100%);
 }
-
 header{
     background-color: rgba(255, 255, 255, 0.5);
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    user-select: none;
+    background-image: url(14_4293_oboi_grafitovyj_uzor_1366x768.jpg);
+    background-size: cover;
 }
-
+main{
+    background: rgb(71,71,71);
+    background: linear-gradient(45deg, rgba(71,71,71,1) 0%, rgba(203,203,203,1) 50%, rgba(51,51,51,1) 100%);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
 #logo{
     width: 250px;
     height: 50px;
@@ -25,16 +34,21 @@ header{
     margin-left: -1000px;
 }
 
+
 .el_menu{
     font-size: 2ww;
     margin: 5px 10px 5px 10px;
     border-radius: 10%;
+    font-family: 'Russo One', sans-serif;  
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    align-self: flex-end;   
 }
-
 #menu{
     text-align: start;
     display: flex;
-    background-color: azure;
+    background-color: rgba(255, 255, 255, 0);
     flex-basis: 250px;
     text-align: center;
     max-height: 50px;
@@ -50,29 +64,57 @@ header>a, #Menus{
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    box-shadow: 1px 1px 7px rgb(0, 0, 0);
+    
 }
 
 header>a:hover, #Menus{
     background-color: lightslategray;
     transition: 0.9s;
-    box-shadow: 1px 1px 7px lightgrey;
+    box-shadow: 1px 1px 7px rgb(0, 0, 0);
     color: rgb(0, 0, 0);
 }
 
-#txt{  
+.reference:hover{
+    transition: 0.9s;
+    box-shadow: 1px 1px 7px lightgrey;
+    color: rgb(88, 88, 88);
+}
+footer{
+    flex-basis: 1.5cm;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    background-image: url(14_4293_oboi_grafitovyj_uzor_1366x768.jpg);
+    background-size: cover;
+    background-position: center;
+    border: ivory;
+    border-radius: 10px;
+    border-style: inset;
+    background-color: rgba(2, 9, 19, 0.76);
+}
+.reference{
+  color: white; 
+  text-decoration-line: initial; 
+  font-family: 'Russo One', sans-serif;
     font-size: 24px;
-    color: white;
-    text-align: center;
-    align-self: flex-end;   
 }
 
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.icon{
+    max-width: 400px;
+    max-height: 350px;
+    display: flex;
+}
+@media screen and (max-width: 900px){
+    .icon{
+        max-width: 200px;
+    }
+}
 .downmenu{    
     list-style-type: none;
-    position: absolute;
-    width: 220px;
-    display: none;
-    margin-left: 16px;
 }
 .downmenu>*{
     padding: 5px 0 5px 0;
@@ -86,64 +128,30 @@ header>a:hover, #Menus{
     font-size: 1.2em;
 }
 
+.downmenu>li:hover{
+    box-shadow: 1px 0px 3px 2px rgb(50, 122, 255);
+    transition: 0.7s;
+    background-color: dodgerblue;
+}
+
+.downmenu{
+    position: absolute;
+    width: 220px;
+    display: none;
+    margin-left: 16px;
+}
+
 .down:hover .downmenu{
     display: block;
 }
 
-#name_holder{
-    width: 100%;
-    text-align: center;
-}
-
-#name_holder>h1{
-    padding-top: 20px;
-    padding-bottom: 15px;
-    color: rgb(206, 206, 206);
-}
-
-.reference{
-    color: rgb(196, 196, 196); 
-    text-decoration-line: initial; 
-}
-
-#txt2{
-    font-family: 'Russo One', sans-serif;
-    font-size: 24px;
-    text-align: right;
-}
-
-#txt3{
-    font-family: 'Russo One', sans-serif;
-    font-size: 24px;
-    text-align: left;
-}
-
-#txt2, #txt3:hover{
-    transition: 0.9s;
-    box-shadow: 1px 1px 7px lightgrey;
-    color: rgb(255, 255, 255);
-}
-
-footer{
-    flex-basis: 1.5cm;
+.row_container>a{
+    color: black;
+    border-radius: 30px;
+    flex-direction: row;
     flex-wrap: wrap;
-    display: flex;
-    justify-content: space-between;
-    background-image: url(14_4293_oboi_grafitovyj_uzor_1366x768.jpg);
-    background-size: cover;
-    background-position: center;
-    border: ivory;
-    border-radius: 10px;
-    border-style: inset;
-    background-color: rgba(2, 9, 19, 0.76);
-    user-select: none;
-}
-
-main{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    
+    width: 23%;
+    justify-content: space-around;
 }
 
 #canvas_holder{

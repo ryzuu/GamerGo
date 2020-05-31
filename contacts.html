@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="./style/style3.css">
+</head>
+<body>
+    
+    <header>
+        <a href="index.html" id="menu">
+            <img id="logo" src="./images/GamerGO.png" alt="">
+        </a>
+        <a href="page1.html">
+            <div class="el_menu">Информация</div>
+        </a>
+        <a href="page2.html">
+            <div class="el_menu">Платформы</div>
+        </a>
+        <div id="Menus" class="down">
+            <div class="el_menu">Игры</div>
+            <ul class="downmenu">
+                <li><a href="page3.html"><div>Flappy Bird</div></a></li>
+                <li><a href="page4.html"><div>Pukman</div></a></li>
+            </ul>
+        </div>
+    </header>
+
+    <script src="anime.js"></script>
+    <script>
+        anime({
+            targets: '#logo',
+            translateX: 1000,
+            duration: 1250,
+            easing: 'easeInOutExpo'
+        })
+    </script>
+
+</body>
+</html>
