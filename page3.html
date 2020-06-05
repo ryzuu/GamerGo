@@ -44,16 +44,16 @@
             <h2>High Scores</h2>
             <div>
                 <ul>
-                    <li>AAA</li>
-                    <li>BBB</li>
-                    <li>CCC</li>
-                    <li>DDD</li>
-                    <li>EEE</li>
-                    <li>FFF</li>
-                    <li>GGG</li>
-                    <li>HHH</li>
-                    <li>III</li>
-                    <li>JJJ</li>
+                    <li>1. <span id="first">AAA</span>..................<span id="firstRecord">000</span></li>
+                    <li>2. <span id="second">BBB</span>..................<span id="secondRecord">000</span></li>
+                    <li>3. <span id="third">CCC</span>..................<span id="thirdRecord">000</span></li>
+                    <li>4. <span id="fourth">DDD</span>..................<span id="fourthRecord">000</span></li>
+                    <li>5. <span id="fifth">EEE</span>..................<span id="fifthRecord">000</span></li>
+                    <li>6. <span id="sixth">FFF</span>..................<span id="sixthRecord">000</span></li>
+                    <li>7. <span id="seventh">GGG</span>..................<span id="seventhRecord">000</span></li>
+                    <li>8. <span id="eighth">HHH</span>..................<span id="eighthRecord">000</span></li>
+                    <li>9. <span id="ninth">III</span>..................<span id="ninthRecord">000</span></li>
+                    <li>10. <span id="tenth">JJJ</span>..................<span id="tenthRecord">000</span></li>
                 </ul>
             </div>
         </div>
@@ -100,6 +100,42 @@
         let pause = false;
 
         let time = 0;
+
+        let dead = false;
+
+        let recordName;
+        let recordScore;
+        
+        let firstRec = document.getElementById("first");
+        let secondRec = document.getElementById("second");
+        let thirdRec = document.getElementById("third");
+        let fourthRec = document.getElementById("fourth");
+        let fifthRec = document.getElementById("fifth");
+        let sixthRec = document.getElementById("sixth");
+        let seventhRec = document.getElementById("seventh");
+        let eighthRec = document.getElementById("eighth");
+        let ninthRec = document.getElementById("ninth");
+        let tenthRec = document.getElementById("tenth");
+
+        let firstRecordScore = document.getElementById("firstRecord");
+        let secondRecordScore = document.getElementById("secondRecord");
+        let thirdRecordScore = document.getElementById("thirdRecord");
+        let fourthRecordScore = document.getElementById("fourthRecord");
+        let fifthRecordScore = document.getElementById("fifthRecord");
+        let sixthRecordScore = document.getElementById("sixthRecord");
+        let seventhRecordScore = document.getElementById("seventhRecord");
+        let eighthRecordScore = document.getElementById("eighthRecord");
+        let ninthRecordScore = document.getElementById("ninthRecord");
+        let tenthRecordScore = document.getElementById("tenthRecord");
+
+        class Record{
+            recordName;
+            recordScore;
+            constructor(recordName, recordScore) {
+                this.recordName = recordName;
+                this.recordScore = recordScore;
+            }            
+        }
 
         class Pipe {
             x;
@@ -150,6 +186,7 @@
                 ctx.font = "50px Arial";
                 ctx.fillText("YOU DIED", 15, 200);
                 pause = true;
+                dead = true;
             }
 
             for (i = 0; i < pipe.length; i++) {
@@ -161,9 +198,23 @@
                         ctx.font = "50px Arial";
                         ctx.fillText("YOU DIED", 15, 200);
                         pause = true;
+                        dead = true;
                     }
 
                 }
+            }
+
+            if(dead == true){
+                recordName = prompt("Запомнить ваш счет?\n(Если да, введите ваше имя, нет - нажмите отмена)", );
+                recordScore = score;
+                /*for(i = 1; i < localStorage.length; i+2){
+                    if(recordScore > localStorage[i]){
+                        localStorage[i].setItem()
+                    }
+                }*/
+                let g = new Record(recordName, recordScore)
+                localStorage.setItem(g, 1);
+                alert(localStorage.key(1));
             }
 
             y = y + 1.5
