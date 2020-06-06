@@ -15,13 +15,13 @@
             <img id="logo" src="./images/GamerGO.png" alt="">
         </a>
         <a href="page1.html">
-            <div class="el_menu" id="txt">Информация</div>
+            <div class="el_menu">Информация</div>
         </a>
         <a href="page2.html">
-            <div class="el_menu" id="txt">Платформы</div>
+            <div class="el_menu">Платформы</div>
         </a>
         <a href="page3.html">
-            <div class="el_menu" id="txt">Начать с начала.</div>
+            <div class="el_menu">Начать с начала.</div>
         </a>
     </header>
 
@@ -40,33 +40,18 @@
         <div id="canvas_holder">
             <canvas width="288" height="512" id="canvas"></canvas>
         </div>
-        <div id="list_holder">
-            <h2>High Scores</h2>
-            <div>
-                <ul>
-                    <li>1. <span id="first">AAA</span>..................<span id="firstRecord">000</span></li>
-                    <li>2. <span id="second">BBB</span>..................<span id="secondRecord">000</span></li>
-                    <li>3. <span id="third">CCC</span>..................<span id="thirdRecord">000</span></li>
-                    <li>4. <span id="fourth">DDD</span>..................<span id="fourthRecord">000</span></li>
-                    <li>5. <span id="fifth">EEE</span>..................<span id="fifthRecord">000</span></li>
-                    <li>6. <span id="sixth">FFF</span>..................<span id="sixthRecord">000</span></li>
-                    <li>7. <span id="seventh">GGG</span>..................<span id="seventhRecord">000</span></li>
-                    <li>8. <span id="eighth">HHH</span>..................<span id="eighthRecord">000</span></li>
-                    <li>9. <span id="ninth">III</span>..................<span id="ninthRecord">000</span></li>
-                    <li>10. <span id="tenth">JJJ</span>..................<span id="tenthRecord">000</span></li>
-                </ul>
-            </div>
-        </div>
 
     </main>
 
     <footer>
-        <h5 id="txt3">
+        <h5>
             <a href="#" class="reference">Контакты</a>
         </h5>
 
-        <h5 id="txt2">
-            <a href="page2.html" class="reference">Дальше</a>
+        <h5>
+            <a href="page2.html" class="reference">
+                <div>Дальше</div>
+            </a>
         </h5>
     </footer>
 
@@ -105,36 +90,14 @@
 
         let recordName;
         let recordScore;
-        
-        let firstRec = document.getElementById("first");
-        let secondRec = document.getElementById("second");
-        let thirdRec = document.getElementById("third");
-        let fourthRec = document.getElementById("fourth");
-        let fifthRec = document.getElementById("fifth");
-        let sixthRec = document.getElementById("sixth");
-        let seventhRec = document.getElementById("seventh");
-        let eighthRec = document.getElementById("eighth");
-        let ninthRec = document.getElementById("ninth");
-        let tenthRec = document.getElementById("tenth");
 
-        let firstRecordScore = document.getElementById("firstRecord");
-        let secondRecordScore = document.getElementById("secondRecord");
-        let thirdRecordScore = document.getElementById("thirdRecord");
-        let fourthRecordScore = document.getElementById("fourthRecord");
-        let fifthRecordScore = document.getElementById("fifthRecord");
-        let sixthRecordScore = document.getElementById("sixthRecord");
-        let seventhRecordScore = document.getElementById("seventhRecord");
-        let eighthRecordScore = document.getElementById("eighthRecord");
-        let ninthRecordScore = document.getElementById("ninthRecord");
-        let tenthRecordScore = document.getElementById("tenthRecord");
-
-        class Record{
+        class Record {
             recordName;
             recordScore;
             constructor(recordName, recordScore) {
                 this.recordName = recordName;
                 this.recordScore = recordScore;
-            }            
+            }
         }
 
         class Pipe {
@@ -204,17 +167,20 @@
                 }
             }
 
-            if(dead == true){
-                recordName = prompt("Запомнить ваш счет?\n(Если да, введите ваше имя, нет - нажмите отмена)", );
+            if (dead == true) {
+                var username = getCookie("name");
                 recordScore = score;
-                /*for(i = 1; i < localStorage.length; i+2){
-                    if(recordScore > localStorage[i]){
-                        localStorage[i].setItem()
-                    }
-                }*/
-                let g = new Record(recordName, recordScore)
-                localStorage.setItem(g, 1);
-                alert(localStorage.key(1));
+                if(username != null){
+                   //как получить значение куки?
+                   document.cookie = "score = " + recordScore;
+                    recordScore = document.cookie.replace(/(?:(?:^|.*;\s*)score\s*\=\s*([^;]*).*$)|^.*$/, "$1"); 
+                } else {
+                    recordName = prompt("Введите имя.");
+                    document.cookie = "name = " + recordName;
+                    recordName = document.cookie.replace(/(?:(?:^|.*;\s*)name\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+                    document.cookie = "score = " + recordScore;
+                    recordScore = document.cookie.replace(/(?:(?:^|.*;\s*)score\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+                }
             }
 
             y = y + 1.5
