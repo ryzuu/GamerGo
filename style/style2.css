@@ -90,6 +90,7 @@ footer{
     border-style: inset;
     background-color: rgba(2, 9, 19, 0.76);
     padding-top: 24px;
+    user-select: none;
 }
 
 .reference{
@@ -197,6 +198,7 @@ footer{
     overflow: hidden;
     transition: 0.2s;
     cursor: pointer;
+    user-select: none;
 }
 
 #button_itself:hover{
