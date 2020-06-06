@@ -40,7 +40,15 @@
         <div id="canvas_holder">
             <canvas width="288" height="512" id="canvas"></canvas>
         </div>
-
+        <div id="button_holder">
+            <div id="button_itself">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Узнать свой лучший счет
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -168,14 +176,24 @@
             }
 
             if (dead == true) {
-                var username = getCookie("name");
+                var cookieDecode = document.cookie
+                        .split(';')
+                        .map(cookie => cookie.split('='))
+                        .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
+                var username = cookieDecode.name        
+                recordName = prompt("Введите имя.");
                 recordScore = score;
-                if(username != null){
-                   //как получить значение куки?
-                   document.cookie = "score = " + recordScore;
-                    recordScore = document.cookie.replace(/(?:(?:^|.*;\s*)score\s*\=\s*([^;]*).*$)|^.*$/, "$1"); 
+                if (recordName == username) {
+                    var userBest = cookieDecode.score
+                    if(userBest <= recordScore){
+                        document.cookie = "score = " + recordScore;
+                        recordScore = document.cookie.replace(/(?:(?:^|.*;\s*)score\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+                    } else {
+                        recordScore = userBest;
+                        document.cookie = "score = " + recordScore;
+                        recordScore = document.cookie.replace(/(?:(?:^|.*;\s*)score\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+                    }
                 } else {
-                    recordName = prompt("Введите имя.");
                     document.cookie = "name = " + recordName;
                     recordName = document.cookie.replace(/(?:(?:^|.*;\s*)name\s*\=\s*([^;]*).*$)|^.*$/, "$1");
                     document.cookie = "score = " + recordScore;
