@@ -2,22 +2,29 @@
     padding: 0;
     margin: 0;
 }
-
 html, body{
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     font-family: 'Exo 2', sans-serif;
-    background: radial-gradient(circle, rgb(143, 143, 143) 0%, rgb(153, 153, 153) 35%, rgb(117, 117, 117) 100%);
+    background: rgb(174,174,176);
+    background: radial-gradient(circle, rgb(100, 100, 100) 0%, rgb(160, 160, 160) 35%, rgba(89,104,107,1) 100%);
 }
-
 header{
     background-color: rgba(255, 255, 255, 0.5);
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    user-select: none;
+    background-image: url(14_4293_oboi_grafitovyj_uzor_1366x768.jpg);
+    background-size: cover;
 }
-
+main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
 #logo{
     width: 250px;
     height: 50px;
@@ -25,16 +32,21 @@ header{
     margin-left: -1000px;
 }
 
+
 .el_menu{
     font-size: 2ww;
     margin: 5px 10px 5px 10px;
     border-radius: 10%;
+    font-family: 'Russo One', sans-serif;  
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    align-self: flex-end;   
 }
-
 #menu{
     text-align: start;
     display: flex;
-    background-color: azure;
+    background-color: rgba(255, 255, 255, 0);
     flex-basis: 250px;
     text-align: center;
     max-height: 50px;
@@ -50,29 +62,59 @@ header>a, #Menus{
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    box-shadow: 1px 1px 7px rgb(0, 0, 0);
+    
 }
 
 header>a:hover, #Menus{
     background-color: lightslategray;
     transition: 0.9s;
-    box-shadow: 1px 1px 7px lightgrey;
+    box-shadow: 1px 1px 7px rgb(0, 0, 0);
     color: rgb(0, 0, 0);
 }
 
-#txt{  
-    font-size: 24px;
-    color: white;
-    text-align: center;
-    align-self: flex-end;   
+.reference:hover{
+    transition: 0.9s;
+    box-shadow: 1px 1px 7px lightgrey;
+    color: rgb(88, 88, 88);
+}
+footer{
+    flex-basis: 1.5cm;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    background-image: url(14_4293_oboi_grafitovyj_uzor_1366x768.jpg);
+    background-size: cover;
+    background-position: center;
+    border: ivory;
+    border-radius: 10px;
+    border-style: inset;
+    background-color: rgba(2, 9, 19, 0.76);
+    padding-top: 24px;
 }
 
+.reference{
+    color: white; 
+    text-decoration-line: initial; 
+    font-family: 'Russo One', sans-serif;
+    font-size: 24px;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.icon{
+    max-width: 400px;
+    max-height: 350px;
+    display: flex;
+}
+@media screen and (max-width: 900px){
+    .icon{
+        max-width: 200px;
+    }
+}
 .downmenu{    
     list-style-type: none;
-    position: absolute;
-    width: 220px;
-    display: none;
-    margin-left: 16px;
 }
 .downmenu>*{
     padding: 5px 0 5px 0;
@@ -86,64 +128,30 @@ header>a:hover, #Menus{
     font-size: 1.2em;
 }
 
+.downmenu>li:hover{
+    box-shadow: 1px 0px 3px 2px rgb(50, 122, 255);
+    transition: 0.7s;
+    background-color: dodgerblue;
+}
+
+.downmenu{
+    position: absolute;
+    width: 220px;
+    display: none;
+    margin-left: 16px;
+}
+
 .down:hover .downmenu{
     display: block;
 }
 
-#name_holder{
-    width: 100%;
-    text-align: center;
-}
-
-#name_holder>h1{
-    padding-top: 20px;
-    padding-bottom: 15px;
-    color: rgb(206, 206, 206);
-}
-
-.reference{
-    color: rgb(196, 196, 196); 
-    text-decoration-line: initial; 
-}
-
-#txt2{
-    font-family: 'Russo One', sans-serif;
-    font-size: 24px;
-    text-align: right;
-}
-
-#txt3{
-    font-family: 'Russo One', sans-serif;
-    font-size: 24px;
-    text-align: left;
-}
-
-#txt2, #txt3:hover{
-    transition: 0.9s;
-    box-shadow: 1px 1px 7px lightgrey;
-    color: rgb(255, 255, 255);
-}
-
-footer{
-    flex-basis: 1.5cm;
+.row_container>a{
+    color: black;
+    border-radius: 30px;
+    flex-direction: row;
     flex-wrap: wrap;
-    display: flex;
-    justify-content: space-between;
-    background-image: url(14_4293_oboi_grafitovyj_uzor_1366x768.jpg);
-    background-size: cover;
-    background-position: center;
-    border: ivory;
-    border-radius: 10px;
-    border-style: inset;
-    background-color: rgba(2, 9, 19, 0.76);
-    user-select: none;
-}
-
-main{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    
+    width: 23%;
+    justify-content: space-around;
 }
 
 #canvas_holder{
@@ -164,3 +172,96 @@ main{
     color: rgb(240, 157, 23);
 }
 
+#button_holder{
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    font-family: consolas;
+}
+
+#button_itself{
+    margin: auto;
+    padding: 15px 30px;
+    border-radius: 3px;
+    position: relative;
+    display: inline-block;
+    color: #f7f7f7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#button_itself:hover{
+    color: #f5f5f5;
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+    transition-delay: 1s;
+}
+
+div span{
+    position: absolute;
+    display: block;
+}
+
+div span:nth-child(1){
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #2196f3);
+}
+
+div:hover span:nth-child(1){
+    left: 100%;
+    transition: 1s;
+}
+
+div span:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #2196f3);
+}
+
+div:hover span:nth-child(3){
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+div span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #2196f3);
+}
+
+div:hover span:nth-child(2){
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+div span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #2196f3);
+}
+
+div:hover span:nth-child(4){
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
