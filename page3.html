@@ -40,6 +40,11 @@
         <div id="canvas_holder">
             <canvas width="288" height="512" id="canvas"></canvas>
         </div>
+
+        <div id="canvas_holder2">
+            <canvas width="320" height="250" id="canvas2"></canvas>
+        </div>
+
         <div id="button_holder">
             <div id="button_itself">
                 <span></span>
@@ -65,7 +70,10 @@
 
     <script>
 
+        canvas2 = document.getElementById("canvas2");
+
         ctx = canvas.getContext('2d');
+        ctx2 = canvas2.getContext('2d');
 
         let bird = new Image();
         bird.src = './images/flappy_bird_bird.png';
@@ -175,7 +183,39 @@
                 }
             }
 
+            function deathMessage() {
+                ctx2.fillStyle = "#3333cc";
+                ctx2.fillRect(0, 0, 320, 250);
+
+                ctx2.fillStyle = "#f2f2f2";
+                ctx2.font = "24px colosans"
+                ctx2.fillText("Сохранить результат?", 40, 25);
+
+                ctx2.fillStyle = "#f2f2f2";
+                ctx2.fillRect(15, 80, 125, 75);
+
+                ctx2.fillStyle = "#141452";
+                ctx2.font = "24px colosans";
+                ctx2.fillText("Да", 60, 125);
+
+                ctx2.fillStyle = "#f2f2f2";
+                ctx2.fillRect(175, 80, 125, 75);
+
+                ctx2.fillStyle = "#141452";
+                ctx2.font = "24px colosans";
+                ctx2.fillText("Нет", 215, 125);
+
+                /*canvas2.addEventListener('click', function (element){
+                    
+                    if () {
+                        
+                    }
+
+                })*/
+            }
+
             if (dead == true) {
+                deathMessage();
                 var cookieDecode = document.cookie
                         .split(';')
                         .map(cookie => cookie.split('='))
