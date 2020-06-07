@@ -11,6 +11,7 @@ html, body{
     font-family: 'Exo 2', sans-serif;
     background: rgb(174,174,176);
     background: radial-gradient(circle, rgb(100, 100, 100) 0%, rgb(160, 160, 160) 35%, rgba(89,104,107,1) 100%);
+    user-select: none;
 }
 header{
     background-color: rgba(255, 255, 255, 0.5);
@@ -266,4 +267,9 @@ div:hover span:nth-child(4){
     bottom: 100%;
     transition: 1s;
     transition-delay: 0.75s;
+}
+
+#canvas_holder2{
+    text-align: center;
+    margin-top: -50px;
 }
