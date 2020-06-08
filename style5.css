@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Passion+One|Russo+One&display=swap');
+.center {
+  margin: 0 auto;
+	text-align: center;
+  width: 100%;
+  padding: 0;
+}
+header{
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#logo{
+    width: 50px;
+    height: 50px;
+    /*background-color: rgba(0, 0, 0, 0.582);*/
+    
+}
+
+.el_menu{
+    font-size: 2ww;
+    margin: 5px 10px 5px 10px;
+    border-radius: 10%;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    align-self: flex-end; 
+}
+
+#menu{
+    text-align: start;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0);
+    flex-basis: 250px;
+    text-align: center;
+    max-height: 50px;
+    margin: 5px 10px 5px 10px;
+}
+
+#logo{
+    width: 250px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.582);
+}
+
+header>a, #Menus{
+    background-color: darkgrey ;
+    flex-basis: 250px;
+    text-align: center;
+    max-height: 50px;
+    margin: 15px 15px 15px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    
+}
+
+header>a:hover, #Menus{
+    background-color: lightslategray;
+    transition: 0.9s;
+    box-shadow: 1px 1px 7px rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.downmenu{    
+    list-style-type: none;
+    position: absolute;
+    width: 220px;
+    display: none;
+    margin-left: 16px;
+}
+.downmenu>*{
+    padding: 5px 0 5px 0;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: grey;
+}
+.downmenu>li>a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.downmenu>li:hover{
+    box-shadow: 1px 0px 3px 2px rgb(50, 122, 255);
+    transition: 0.7s;
+    background-color: dodgerblue;
+}
+
+.down:hover .downmenu{
+    display: block;
+    
+}
+.platform-block{
+    display: flex;   
+}
+#txt4{
+    font-family: 'Russo One', sans-serif;  
+    font-size: 24px;
+    color: white;
+    align-self: flex-end;   
+    text-decoration: none;
+}
+footer{
+    flex-basis: 1.5cm;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    background-image: url('./images/14_4293_oboi_grafitovyj_uzor_1366x768.jpg');
+    background-size: cover;
+    background-position: center;
+    border: ivory;
+    border-radius: 10px;
+    border-style: inset;
+    background-color: rgba(2, 9, 19, 0.76);
+}
+#txt{
+    font-family: 'Russo One', sans-serif;  
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    align-self: flex-end;   
+}
+#txt2{
+    font-family: 'Russo One', sans-serif;
+    font-size: 24px;
+    text-align: right;
+}
+#txt3{
+    font-family: 'Russo One', sans-serif;
+    font-size: 24px;
+    text-align: left;
+}
+#txt2, #txt3:hover{
+    transition: 0.9s;
+    box-shadow: 1px 1px 7px lightgrey;
+    color: rgb(0, 0, 0);
+}
+.reference{
+    color: white; 
+    text-decoration-line: initial; 
+  }
+html, body{
+    background-image: url('./images/Oboi.jpg');
+    background-size: cover;
+}
+
+#fontface {
+	font-family: 'Russo One', sans-serif;
+	position: absolute;
+	visibility: hidden;
+}
+
+h1 {
+    font-family: 'Russo One', sans-serif;
+	font-size: 3rem;
+	padding: .5em;
+	font-weight: 500;
+	text-shadow: -5px 9px 25px rgba(255, 150, 150, .75);
+  text-align: center;
+  color: violet;
+	
+}
+
+p {
+	font-family: 'Russo One', sans-serif;
+	font-size: 1em;
+	padding: 1em;
+	font-weight: 400;
+	text-shadow: -5px 9px 25px rgba(255, 150, 150, .75);
+	text-align: center;
+	color: red;
+}
+
+.pacman {
+	width: 50px;
+	height: 50px;
+	margin: 0px;
+	outline: 1px red;
+    background-image: url('./images/pacman.png') ;
+    background-size: cover;
+}
+
+.wall {
+	width: 50px;
+	height: 50px;
+	margin: 0px;
+	outline: 1px red;
+    background-image: url('./images/wall.png');
+    background-size: cover;
+}
+
+.coin {
+	width: 50px;
+	height: 50px;
+	margin: 0px;
+	outline: 1px red;
+    background-image: url('./images/coin.png') ;
+    background-size: cover;
+}
+
+.ground {
+	width: 50px;
+	height: 50px;
+	margin: 0px;
+	outline: 1px red;
+    background-image: url('./images/ground.png') ;
+    background-size: cover;
+}
+
+.ghost {
+	width: 50px;
+	height: 50px;
+	margin: 0px;
+	outline: 1px red;
+    background-image: url('./images/ghost.png');
+    background-size: cover;
+}
+
+div {
+	vertical-align: top;
+	display: inline-block;
+}
+
+#world {
+	margin: 0 auto;
+}
