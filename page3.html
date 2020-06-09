@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Racing</title>
+    <title>Flappy Bird</title>
     <link rel="stylesheet" href="./style/style2.css">
 </head>
 
@@ -41,12 +41,8 @@
             <canvas width="288" height="512" id="canvas"></canvas>
         </div>
 
-        <div id="canvas_holder2">
-            <canvas width="320" height="250" id="canvas2"></canvas>
-        </div>
-
         <div id="button_holder">
-            <div id="button_itself">
+            <div id="button_itself" onclick="bestScore()">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -58,7 +54,7 @@
 
     <footer>
         <h5>
-            <a href="#" class="reference">Контакты</a>
+            <a href="contacts.html" class="reference">Контакты</a>
         </h5>
 
         <h5>
@@ -68,12 +64,10 @@
         </h5>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script>
 
-        canvas2 = document.getElementById("canvas2");
-
         ctx = canvas.getContext('2d');
-        ctx2 = canvas2.getContext('2d');
 
         let bird = new Image();
         bird.src = './images/flappy_bird_bird.png';
@@ -104,17 +98,7 @@
 
         let dead = false;
 
-        let recordName;
         let recordScore;
-
-        class Record {
-            recordName;
-            recordScore;
-            constructor(recordName, recordScore) {
-                this.recordName = recordName;
-                this.recordScore = recordScore;
-            }
-        }
 
         class Pipe {
             x;
@@ -184,61 +168,46 @@
             }
 
             function deathMessage() {
-                ctx2.fillStyle = "#3333cc";
-                ctx2.fillRect(0, 0, 320, 250);
 
-                ctx2.fillStyle = "#f2f2f2";
-                ctx2.font = "24px colosans"
-                ctx2.fillText("Сохранить результат?", 40, 25);
-
-                ctx2.fillStyle = "#f2f2f2";
-                ctx2.fillRect(15, 80, 125, 75);
-
-                ctx2.fillStyle = "#141452";
-                ctx2.font = "24px colosans";
-                ctx2.fillText("Да", 60, 125);
-
-                ctx2.fillStyle = "#f2f2f2";
-                ctx2.fillRect(175, 80, 125, 75);
-
-                ctx2.fillStyle = "#141452";
-                ctx2.font = "24px colosans";
-                ctx2.fillText("Нет", 215, 125);
-
-                /*canvas2.addEventListener('click', function (element){
-                    
-                    if () {
-                        
+                Swal.fire({
+                    title: 'Сохранить результат?',
+                    imageUrl: 'https://media.giphy.com/media/l41JUepQ8rqpnI5ZS/giphy.gif',
+                    showCancelButton: true,
+                    confirmButtonText: 'Да, сохранить!',
+                    cancelButtonText: 'Нет, не надо.',
+                }).then((result) => {
+                    if (result.value) {
+                        Swal.fire(
+                            'Сохранено!',
+                            'Ваш счет был сохранен.',
+                            'success'
+                        );
+                        saver();
                     }
+                })
 
-                })*/
+            }
+
+            function saver() {
+                recordScore = score;
+                if (recordScore >= localStorage.getItem("usersBest")) {
+                    localStorage.setItem("usersBest", recordScore);
+                } else {
+                    recordScore = localStorage.getItem("usersBest");
+                    localStorage.setItem("usersBest", recordScore);
+                }
+            }
+
+            function bestScore() {
+                Swal.fire(
+                    'Ваш лучший счет',
+                    localStorage.getItem("usersBest"),
+                    'warning'
+                )
             }
 
             if (dead == true) {
                 deathMessage();
-                var cookieDecode = document.cookie
-                        .split(';')
-                        .map(cookie => cookie.split('='))
-                        .reduce((accumulator, [key, value]) => ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }), {});
-                var username = cookieDecode.name        
-                recordName = prompt("Введите имя.");
-                recordScore = score;
-                if (recordName == username) {
-                    var userBest = cookieDecode.score
-                    if(userBest <= recordScore){
-                        document.cookie = "score = " + recordScore;
-                        recordScore = document.cookie.replace(/(?:(?:^|.*;\s*)score\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-                    } else {
-                        recordScore = userBest;
-                        document.cookie = "score = " + recordScore;
-                        recordScore = document.cookie.replace(/(?:(?:^|.*;\s*)score\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-                    }
-                } else {
-                    document.cookie = "name = " + recordName;
-                    recordName = document.cookie.replace(/(?:(?:^|.*;\s*)name\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-                    document.cookie = "score = " + recordScore;
-                    recordScore = document.cookie.replace(/(?:(?:^|.*;\s*)score\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-                }
             }
 
             y = y + 1.5
