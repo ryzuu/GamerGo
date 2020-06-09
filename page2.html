@@ -17,7 +17,7 @@
 <body>
   <header>
     <a href="index.html" id="menu">
-      <div><img id="logo-platform" src="./images/GamerGo.png" alt=""></div>
+      <div><img id="logo" src="./images/GamerGo.png" alt=""></div>
     </a>
     <a href="page1.html">
       <div class="el_menu" id="txt">Информация</div>
@@ -29,6 +29,7 @@
       <div class="el_menu" id="txt">Игры</div>
       <ul class="downmenu">
         <li><a href="page3.html">Flappy Bird</a></li>
+        <li><a href="page4.html"> PukeMan </a></li>
       </ul>
     </div>
 
@@ -106,5 +107,13 @@
     <h5 id="txt3"> <a href="index.html" class="reference">На Главную.</a> </h5>
   </footer>
 </body>
-
+<script src="anime.js"></script>
+<script>
+    anime({
+        targets: '#logo',
+        translateX: 250,
+        duration: 1250,
+        easing: 'easeInOutExpo'
+    })
+</script>
 </html>
