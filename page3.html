@@ -182,7 +182,6 @@
                             'Ваш счет был сохранен.',
                             'success'
                         );
-                        saver();
                     }
                 })
 
@@ -208,6 +207,7 @@
 
             if (dead == true) {
                 deathMessage();
+                saver();
             }
 
             y = y + 1.5
