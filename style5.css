@@ -18,22 +18,16 @@ header{
 }
 
 #logo{
-    width: 50px;
+    width: 300px;
     height: 50px;
-    /*background-color: rgba(0, 0, 0, 0.582);*/
-    
+    background-color: rgba(0, 0, 0, 0.582);
+    margin-left: -250px;
 }
 
 .el_menu{
     font-size: 2ww;
-    margin: 5px 10px 5px 10px;
-    border-radius: 10%;
-    font-size: 24px;
-    color: white;
-    text-align: center;
-    align-self: flex-end; 
+    border-radius: 0%;
 }
-
 #menu{
     text-align: start;
     display: flex;
@@ -43,13 +37,6 @@ header{
     max-height: 50px;
     margin: 5px 10px 5px 10px;
 }
-
-#logo{
-    width: 250px;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.582);
-}
-
 header>a, #Menus{
     background-color: darkgrey ;
     flex-basis: 250px;
@@ -107,6 +94,7 @@ header>a:hover, #Menus{
     color: white;
     align-self: flex-end;   
     text-decoration: none;
+    text-align: right;
 }
 footer{
     flex-basis: 1.5cm;
@@ -123,7 +111,7 @@ footer{
 }
 #txt{
     font-family: 'Russo One', sans-serif;  
-    font-size: 24px;
+    font-size: 16px;
     color: white;
     text-align: center;
     align-self: flex-end;   
@@ -163,9 +151,9 @@ h1 {
 	font-size: 3rem;
 	padding: .5em;
 	font-weight: 500;
-	text-shadow: -5px 9px 25px rgba(255, 150, 150, .75);
+	text-shadow: grey;
   text-align: center;
-  color: violet;
+  color: white;
 	
 }
 
@@ -215,12 +203,12 @@ p {
     background-size: cover;
 }
 
-.ghost {
+.enemy {
 	width: 50px;
 	height: 50px;
 	margin: 0px;
 	outline: 1px red;
-    background-image: url('./images/ghost.png');
+    background-image: url('./images/enemy.png');
     background-size: cover;
 }
 
@@ -231,4 +219,8 @@ div {
 
 #world {
 	margin: 0 auto;
+}
+.buttonteach{
+    display: flex;
+    justify-content: space-around;
 }
