@@ -99,6 +99,7 @@
         let dead = false;
 
         let recordScore;
+        let userBest;
 
         class Pipe {
             x;
@@ -184,7 +185,7 @@
                         );
                     }
                 })
-
+                saver();
             }
 
             function saver() {
@@ -198,16 +199,17 @@
             }
 
             function bestScore() {
+                userBest = localStorage.getItem("usersBest");
                 Swal.fire(
                     'Ваш лучший счет',
-                    localStorage.getItem("usersBest"),
+                    userBest,
                     'warning'
                 )
             }
 
             if (dead == true) {
                 deathMessage();
-                saver();
+
             }
 
             y = y + 1.5
