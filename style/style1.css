@@ -2,22 +2,32 @@
     padding: 0;
     margin: 0;
 }
-
 html, body{
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     font-family: 'Exo 2', sans-serif;
+}
+header{
     background: rgb(174,174,176);
     background: radial-gradient(circle, rgba(174,174,176,1) 0%, rgba(225,225,237,1) 35%, rgba(89,104,107,1) 100%);
-}
-
-header{
-    background-color: rgba(255, 255, 255, 0.5);
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    background-size: cover;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
 }
-
+main{
+    flex-basis: 250px;
+    background-size:  cover;
+    background-position: right;
+    background-blend-mode: multiply;
+    margin-top: 65px;
+}
 #logo{
     width: 250px;
     height: 50px;
@@ -25,16 +35,21 @@ header{
     margin-left: -1000px;
 }
 
+
 .el_menu{
     font-size: 2ww;
     margin: 5px 10px 5px 10px;
     border-radius: 10%;
+    font-family: 'Russo One', sans-serif;  
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    align-self: flex-end;   
 }
-
 #menu{
     text-align: start;
     display: flex;
-    background-color: azure;
+    background-color: rgba(255, 255, 255, 0);
     flex-basis: 250px;
     text-align: center;
     max-height: 50px;
@@ -50,29 +65,60 @@ header>a, #Menus{
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    box-shadow: 1px 1px 7px rgb(0, 0, 0);
+    
 }
 
 header>a:hover, #Menus{
     background-color: lightslategray;
     transition: 0.9s;
-    box-shadow: 1px 1px 7px lightgrey;
+    box-shadow: 1px 1px 7px rgb(0, 0, 0);
     color: rgb(0, 0, 0);
 }
 
-#txt{  
+.reference:hover{
+    transition: 0.9s;
+    box-shadow: 1px 1px 7px lightgrey;
+    color: rgb(88, 88, 88);
+}
+footer{
+    flex-basis: 1.5cm;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+    border: ivory;
+    border-radius: 10px;
+    border-style: inset;
+    background-color: rgba(2, 9, 19, 0.76);
+}
+.reference{
+  color: white; 
+  text-decoration-line: initial; 
+  font-family: 'Russo One', sans-serif;
     font-size: 24px;
-    color: white;
-    text-align: center;
-    align-self: flex-end;   
 }
 
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.icon{
+    max-width: 400px;
+    max-height: 350px;
+    display: flex;
+}
+@media screen and (max-width: 1050px){
+    .icon{
+        max-width: 200px;
+    }
+    html, body{
+        width: 100%;
+        height: 100%;
+    }
+}
 .downmenu{    
     list-style-type: none;
-    position: absolute;
-    width: 220px;
-    display: none;
-    margin-left: 16px;
 }
 .downmenu>*{
     padding: 5px 0 5px 0;
@@ -84,6 +130,19 @@ header>a:hover, #Menus{
     color: white;
     text-decoration: none;
     font-size: 1.2em;
+}
+
+.downmenu>li:hover{
+    box-shadow: 1px 0px 3px 2px rgb(50, 122, 255);
+    transition: 0.7s;
+    background-color: dodgerblue;
+}
+
+.downmenu{
+    position: absolute;
+    width: 220px;
+    display: none;
+    margin-left: 16px;
 }
 
 .down:hover .downmenu{
@@ -98,7 +157,7 @@ header>a:hover, #Menus{
 #name_holder>h1{
     padding-top: 20px;
     padding-bottom: 15px;
-    color: rgb(206, 206, 206);
+    color: rgb(233, 233, 233);
 }
 
 #main_container{
@@ -108,14 +167,9 @@ header>a:hover, #Menus{
     padding-top: 20px;
 }
 
-#main_container>div>h3{
-    font-size: 25px;
-    font-weight: 700;
-}
-
 #intro{
     text-align: center;
-    color: rgb(206, 206, 206);
+    color: rgb(233, 233, 233);
 }
 
 .genres{
@@ -163,29 +217,16 @@ header>a:hover, #Menus{
     .img_div{
         margin: auto;
     }
+    #main_container{
+        margin: auto;
+    }
 }
 
 .reference{
-    color: rgb(196, 196, 196); 
-    text-decoration-line: initial; 
-}
-
-#txt2{
-    font-family: 'Russo One', sans-serif;
+  color: white; 
+  text-decoration-line: initial; 
+  font-family: 'Russo One', sans-serif;
     font-size: 24px;
-    text-align: right;
-}
-
-#txt3{
-    font-family: 'Russo One', sans-serif;
-    font-size: 24px;
-    text-align: left;
-}
-
-#txt2, #txt3:hover{
-    transition: 0.9s;
-    box-shadow: 1px 1px 7px lightgrey;
-    color: rgb(255, 255, 255);
 }
 
 footer{
@@ -203,7 +244,8 @@ footer{
 }
 
 main{
-    background: rgb(93, 102, 102); 
+    background: rgb(138, 138, 138);
+    background: linear-gradient(90deg, rgba(160, 160, 160, 0.61) 0%, rgb(114, 114, 114) 50%, rgba(160, 160, 160, 0.582) 100%);
 }
 
 hr{
@@ -224,7 +266,7 @@ hr{
     color: rgb(226, 226, 226);
     font-size: 1.35em;
     font-weight: 700;
-    background-color: rgba(75, 75, 75, 0.384);
+    background-color: rgba(41, 41, 41, 0.384);
     padding: 15px 10px;
     min-width: 100px;
     text-align: center;
@@ -235,77 +277,17 @@ hr{
     margin-bottom: 20px;
 }
 
-
-@media screen and (max-width: 700px){
-    .img_div{
-        display: none;
-        
-    }
-    .p_holder{
-        max-width: 100%;
-        margin: auto;
-    }
-    .genres{
-        color: rgb(236, 236, 236);
-        margin-top: 0.1em;
-        display: flex;
-        flex-basis: 40%;
-    }
-    
-    #action{
-        background-image: url("https://cdn.shazoo.ru/148382_HahfEO3nMT_darksoulsiii_2016_03_26_03_50_31.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-color: rgba(0,0,0,.45);
-        background-blend-mode: darken
-    }
-
-    #simulation{
-        background-image: url("https://cdn.shazoo.ru/385359_pwrQb08kSE_xoa3nhz.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-color: rgba(0,0,0,.5);
-        background-blend-mode: darken
-    }
-
-    #quest{
-        background-image: url("https://cutewallpaper.org/21/video-game-4k-wallpaper/The-Legend-of-Zelda-Breath-of-the-Wild-Adventure-Video-Game-.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-color: rgba(0,0,0,.7);
-        background-blend-mode: darken
-    }
-
-    #strategy{
-        background-image: url("https://wallpapershome.ru/images/wallpapers/varhamer-40000-3840x2160-vaha-strategiya-skrinshot-art-obzor-3721.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-color: rgba(0,0,0,.5);
-        background-blend-mode: darken
-    }
-
-    #puzzle{
-        background-image: url("https://main-cdn.goods.ru/big2/hlr-system/1718472/100023216281b1.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-color: rgba(0,0,0,.7);
-        background-blend-mode: darken;
-    }
-
-    #rpg{
-        background-image: url("https://wallpaperaccess.com/full/636565.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-color: rgba(0,0,0,.7);
-        background-blend-mode: darken
+@media screen and (max-width: 1024px){
+    main{
+        margin-top: 130px;
     }
 }
 
-
-
+@media screen and (max-width: 425px){
+    header{
+        position: relative;
+    }
+    main{
+        margin-top: 0;
+    }
+}
