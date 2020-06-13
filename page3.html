@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flappy Bird</title>
-    <link rel="stylesheet" href="./style/style2.css">
+    <link rel="stylesheet" href="./style/style3.css">
 </head>
 
 <body>
 
     <header>
-        <a href="index.html" id="menu" title="На главную.">
+        <a href="index.html" id="menu">
             <img id="logo" src="./images/GamerGO.png" alt="">
         </a>
         <a href="page1.html">
@@ -53,12 +53,15 @@
     </main>
 
     <footer>
+        <div id="Menu-Contact" class="up">
+            <ul class="upmenu">
+              <li><a href="#">Никита</a></li>
+              <li><a href="#">Андрей</a></li>
+            </ul>
+            <div id="txt">Контакты</div>
+          </div>
         <h5>
-            <a href="contacts.html" class="reference">Контакты</a>
-        </h5>
-
-        <h5>
-            <a href="index.html" class="reference">
+            <a href="page2.html" class="reference">
                 <div>На главную</div>
             </a>
         </h5>
@@ -168,53 +171,57 @@
                 }
             }
 
+            function deathMessage() {
+
+                Swal.fire({
+                    title: 'Сохранить результат?',
+                    imageUrl: 'https://media.giphy.com/media/l41JUepQ8rqpnI5ZS/giphy.gif',
+                    showCancelButton: true,
+                    confirmButtonText: 'Да, сохранить!',
+                    cancelButtonText: 'Нет, не надо.',
+                }).then((result) => {
+                    if (result.value) {
+                        Swal.fire(
+                            'Сохранено!',
+                            'Ваш счет был сохранен.',
+                            'success'
+                        );
+                    }
+                })
+                saver();
+            }
+
+            function saver() {
+                recordScore = score;
+                if (recordScore >= localStorage.getItem("usersBest")) {
+                    localStorage.setItem("usersBest", recordScore);
+                } else {
+                    recordScore = localStorage.getItem("usersBest");
+                    localStorage.setItem("usersBest", recordScore);
+                }
+            }
+
+            function bestScore() {
+                userBest = localStorage.getItem("usersBest");
+                Swal.fire(
+                    'Ваш лучший счет',
+                    userBest,
+                    'warning'
+                )
+            }
+
             if (dead == true) {
                 deathMessage();
+
             }
 
             y = y + 1.5
 
+
+
+
             if (pause != true)
                 requestAnimationFrame(draw);
-        }
-
-        function deathMessage() {
-
-            Swal.fire({
-                title: 'Сохранить результат?',
-                icon: 'question',
-                showCancelButton: true,
-                confirmButtonText: 'Да, сохранить!',
-                cancelButtonText: 'Нет, не надо.',
-            }).then((result) => {
-                if (result.value) {
-                    Swal.fire(
-                        'Сохранено!',
-                        'Ваш счет был сохранен.',
-                        'success'
-                    );
-                }
-            })
-            saver();
-        }
-
-        function bestScore() {
-            Swal.fire(
-                'Ваш лучший счет:',
-                userBest,
-                'warning'
-            )
-        }
-
-        function saver() {
-            recordScore = score;
-            if (recordScore >= localStorage.getItem("usersBest")) {
-                localStorage.setItem("usersBest", recordScore);
-            } else {
-                recordScore = localStorage.getItem("usersBest");
-                localStorage.setItem("usersBest", recordScore);
-            }
-            userBest = localStorage.getItem("usersBest");
         }
 
         bg.onload = draw;

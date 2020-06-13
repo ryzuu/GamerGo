@@ -11,7 +11,7 @@
 <body>
 
     <header>
-        <a href="index.html" id="menu" title="На главную.">
+        <a href="index.html" id="menu">
             <img id="logo" src="./images/GamerGO.png" alt="">
         </a>
         <a href="page1.html">
@@ -25,12 +25,13 @@
             <ul class="downmenu">
                 <li><a href="page3.html">
                         <div>Flappy Bird</div>
+                    </a></li>
+                <li><a href="page4.html">
+                        <div>PukeMan</div>
                     </a>
-                </li>
             </ul>
         </div>
     </header>
-
 
     <script src="anime.js"></script>
     <script>
@@ -76,7 +77,8 @@
 
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Underdog&display=swap');
-            .my_block{
+
+            .my_block {
                 border-radius: 10px;
                 background-position: top;
                 margin: 0 auto;
@@ -93,20 +95,22 @@
                 padding: 1.5em;
             }
 
-            #my_action{
+            #my_action {
                 background-image: url('./images/genre1.jpg');
             }
 
-            #my_action:hover{
+            #my_action:hover {
                 background-image: url('https://media.giphy.com/media/MWL7evUUaBvzi/giphy.gif');
                 background-position: center;
             }
-            .my_block:hover>.my_text{
+
+            .my_block:hover>.my_text {
                 opacity: 0.65;
                 transition: 1s;
                 background: none;
             }
-            .my_text{
+
+            .my_text {
                 background-color: rgba(26, 26, 26, 0.836);
                 border-radius: 10px;
                 width: 80%;
@@ -115,7 +119,8 @@
                 font-family: 'Underdog', cursive;
                 padding: 1em;
             }
-            .my_heady{
+
+            .my_heady {
                 margin: 1em;
                 font-family: 'Underdog', cursive;
                 font-size: 2em;
@@ -125,53 +130,53 @@
                 font-weight: 900;
             }
 
-            #my_sim{
+            #my_sim {
                 background-image: url('./images/genre2.jpg');
                 background-position: center;
                 transition: 1.5s;
             }
 
-            #my_sim:hover{
+            #my_sim:hover {
                 background-image: url('https://media.giphy.com/media/jxaMNeQkuSTaB7KYTc/giphy.gif');
             }
 
-            #my_quest{
+            #my_quest {
                 background-image: url('./images/genre3.jpg');
                 background-position: center;
                 transition: 1.45s;
             }
 
-            #my_quest:hover{
+            #my_quest:hover {
                 background-image: url('https://media.giphy.com/media/sCPGYa9EAeTFC/giphy.gif');
                 background-position: bottom;
             }
 
-            #my_strat{
+            #my_strat {
                 background-image: url('./images/genre4.jpg');
             }
 
-            #my_strat:hover{
+            #my_strat:hover {
                 background-image: url('https://media.giphy.com/media/RIkV7jhqvJyyPIuRsz/giphy.gif');
                 background-position: bottom;
             }
 
-            #my_puzzle{
+            #my_puzzle {
                 background-image: url('./images/genre5.jpg');
                 background-position: bottom;
             }
 
-            #my_puzzle:hover{
+            #my_puzzle:hover {
                 background-image: url('https://media.giphy.com/media/l378skJqZBIabyBY4/giphy.gif');
                 background-position: center;
             }
 
-            #my_rpg{
+            #my_rpg {
                 background-image: url('./images/genre6.jpeg');
                 padding-bottom: 4em;
                 margin-bottom: 1em;
             }
 
-            #my_rpg:hover{
+            #my_rpg:hover {
                 background-image: url('https://media.giphy.com/media/1b0K93CJhfa3C/giphy.gif');
                 background-position: center;
             }
@@ -180,60 +185,77 @@
         <div id="main_container">
             <h2 class="my_heady" id="action">Экшен</h2>
             <div class="my_block" id="my_action">
-                <div class="my_text"><p>Жанр компьютерных игр, в котором
-                    делается упор на
-                    эксплуатацию физических возможностей игрока, в том числе координации глаз и рук и скорости реакции.
-                    Жанр представлен во множестве разновидностей от файтингов, шутеров и платформеров, которые считаются
-                    наиболее важными для жанра, до MOBA и некоторых стратегий в реальном времени, которые возможно
-                    отнести к жанру экшен.</p></div>
+                <div class="my_text">
+                    <p>Жанр компьютерных игр, в котором
+                        делается упор на
+                        эксплуатацию физических возможностей игрока, в том числе координации глаз и рук и скорости
+                        реакции.
+                        Жанр представлен во множестве разновидностей от файтингов, шутеров и платформеров, которые
+                        считаются
+                        наиболее важными для жанра, до MOBA и некоторых стратегий в реальном времени, которые возможно
+                        отнести к жанру экшен.</p>
+                </div>
             </div>
             <h2 class="my_heady" id="simulation">Симуляторы</h2>
             <div class="my_block" id="my_sim">
-                <div class="my_text"><p>Симуляторы автомобилей и мотоциклов, самолётов, космических кораблей, танков,
-                    поездов, подлодок, различных видов спорта и т. п. Основным принципом симулятора является точное
-                    воспроизведение особенностей какой-то тематической области (например: автосимулятор должен
-                    максимально точно воспроизводить физические особенности машин).</p></div>
+                <div class="my_text">
+                    <p>Симуляторы автомобилей и мотоциклов, самолётов, космических кораблей, танков,
+                        поездов, подлодок, различных видов спорта и т. п. Основным принципом симулятора является точное
+                        воспроизведение особенностей какой-то тематической области (например: автосимулятор должен
+                        максимально точно воспроизводить физические особенности машин).</p>
+                </div>
             </div>
             <h2 class="my_heady" id="quest">Квест или приключенческая игра</h2>
             <div class="my_block" id="my_quest">
-                <div class="my_text"><p>Один из основных жанров компьютерных игр, представляющий собой интерактивную историю с главным
-                    героем, управляемым игроком.
-                    Важнейшими элементами игры в жанре квеста являются собственно повествование и исследование мира,
-                    а
-                    ключевую роль в игровом процессе играет решение головоломок и задач, требующих от игрока
-                    умственных
-                    усилий.</p></div>
+                <div class="my_text">
+                    <p>Один из основных жанров компьютерных игр, представляющий собой интерактивную историю с главным
+                        героем, управляемым игроком.
+                        Важнейшими элементами игры в жанре квеста являются собственно повествование и исследование мира,
+                        а
+                        ключевую роль в игровом процессе играет решение головоломок и задач, требующих от игрока
+                        умственных
+                        усилий.</p>
+                </div>
             </div>
             <h2 class="my_heady" id="strategy">Стратегическая игра</h2>
             <div class="my_block" id="my_strat">
-                <div class="my_text"><p>Игры данного жанра характеризуются тем, что игроку для достижения цели необходимо применять
-                    стратегическое мышление, и оно противопоставляется быстрым действиям и реакцией, которые, как
-                    правило, не обязательны для успеха в таких играх.</p></div>
+                <div class="my_text">
+                    <p>Игры данного жанра характеризуются тем, что игроку для достижения цели необходимо применять
+                        стратегическое мышление, и оно противопоставляется быстрым действиям и реакцией, которые, как
+                        правило, не обязательны для успеха в таких играх.</p>
+                </div>
             </div>
             <h2 class="my_heady" id="puzzle">Головоломки</h2>
             <div class="my_block" id="my_puzzle">
-                <div class="my_text"><p>Hазвание жанра компьютерных игр, целью которых является
-                    решение логических задач, требующих от игрока задействования логики, стратегии и интуиции.</p></div>
+                <div class="my_text">
+                    <p>Hазвание жанра компьютерных игр, целью которых является
+                        решение логических задач, требующих от игрока задействования логики, стратегии и интуиции.</p>
+                </div>
             </div>
             <h2 class="my_heady" id="rpg">Компьютерные ролевые игры(RPG)</h2>
             <div class="my_block" id="my_rpg">
-                <div class="my_text"><p>Жанр компьютерных игр, основанный на элементах
-                    игрового процесса традиционных настольных
-                    ролевых игр. В ролевой игре игрок управляет одним или несколькими персонажами, каждый из которых
-                    описан набором численных характеристик, списком способностей и умений; примерами таких
-                    характеристик
-                    могут быть хит-пойнты , показатели силы, ловкости, интеллекта, защиты,
-                    уклонения, уровень развития того или иного навыка и т. п.</p></div>
+                <div class="my_text">
+                    <p>Жанр компьютерных игр, основанный на элементах
+                        игрового процесса традиционных настольных
+                        ролевых игр. В ролевой игре игрок управляет одним или несколькими персонажами, каждый из которых
+                        описан набором численных характеристик, списком способностей и умений; примерами таких
+                        характеристик
+                        могут быть хит-пойнты , показатели силы, ловкости, интеллекта, защиты,
+                        уклонения, уровень развития того или иного навыка и т. п.</p>
+                </div>
             </div>
         </div>
 
     </main>
 
     <footer>
-        <h5 id="txt3">
-            <a href="contacts.html" class="reference">Контакты</a>
-        </h5>
-
+        <div id="Menu-Contact" class="up">
+            <ul class="upmenu">
+              <li><a href="#">Никита</a></li>
+              <li><a href="#">Андрей</a></li>
+            </ul>
+            <div id="txt">Контакты</div>
+          </div>
         <h5 id="txt2">
             <a href="page2.html" class="reference">Дальше</a>
         </h5>
