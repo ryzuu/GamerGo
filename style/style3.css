@@ -30,7 +30,7 @@ main{
     width: 250px;
     height: 50px;
     background-color: rgba(0, 0, 0, 0.582);
-    margin-left: -1000px;
+    margin-left: -250px;
 }
 #txt{
     font-family: 'Russo One', sans-serif;  
