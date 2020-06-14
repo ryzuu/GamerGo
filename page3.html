@@ -16,7 +16,7 @@
     <header>
         <a href="index.html" id="menu" title="На главную.">
             <div><img id="logo" src="./images/GamerGo.png" alt=""></div>
-          </a>
+        </a>
         <a href="page1.html">
             <div class="el_menu">Информация</div>
         </a>
@@ -174,57 +174,53 @@
                 }
             }
 
-            function deathMessage() {
-
-                Swal.fire({
-                    title: 'Сохранить результат?',
-                    imageUrl: 'https://media.giphy.com/media/l41JUepQ8rqpnI5ZS/giphy.gif',
-                    showCancelButton: true,
-                    confirmButtonText: 'Да, сохранить!',
-                    cancelButtonText: 'Нет, не надо.',
-                }).then((result) => {
-                    if (result.value) {
-                        Swal.fire(
-                            'Сохранено!',
-                            'Ваш счет был сохранен.',
-                            'success'
-                        );
-                    }
-                })
-                saver();
-            }
-
-            function saver() {
-                recordScore = score;
-                if (recordScore >= localStorage.getItem("usersBest")) {
-                    localStorage.setItem("usersBest", recordScore);
-                } else {
-                    recordScore = localStorage.getItem("usersBest");
-                    localStorage.setItem("usersBest", recordScore);
-                }
-            }
-
-            function bestScore() {
-                userBest = localStorage.getItem("usersBest");
-                Swal.fire(
-                    'Ваш лучший счет',
-                    userBest,
-                    'warning'
-                )
-            }
-
             if (dead == true) {
                 deathMessage();
-
             }
 
             y = y + 1.5
 
-
-
-
             if (pause != true)
                 requestAnimationFrame(draw);
+        }
+
+        function deathMessage() {
+
+            Swal.fire({
+                title: 'Сохранить результат?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Да, сохранить!',
+                cancelButtonText: 'Нет, не надо.',
+            }).then((result) => {
+                if (result.value) {
+                    Swal.fire(
+                        'Сохранено!',
+                        'Ваш счет был сохранен.',
+                        'success'
+                    );
+                }
+            })
+            saver();
+        }
+
+        function bestScore() {
+            Swal.fire(
+                'Ваш лучший счет:',
+                userBest,
+                'warning'
+            )
+        }
+
+        function saver() {
+            recordScore = score;
+            if (recordScore >= localStorage.getItem("usersBest")) {
+                localStorage.setItem("usersBest", recordScore);
+            } else {
+                recordScore = localStorage.getItem("usersBest");
+                localStorage.setItem("usersBest", recordScore);
+            }
+            userBest = localStorage.getItem("usersBest");
         }
 
         bg.onload = draw;
